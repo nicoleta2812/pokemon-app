@@ -3,6 +3,7 @@
 function Card({ pokemon }){
     return (
         <div className="card">
+            <div className="number">{pokemon.order}</div>
             <div className="card-img">
                 <img src={pokemon.sprites.front_default}></img>
             </div>
@@ -11,10 +12,24 @@ function Card({ pokemon }){
                 {pokemon.types.map((type) => {
                     return (
                         <div className="card-type">
-
+                            {type.type.name}
                         </div>
                     )
                 })}
+            </div>
+            <div className="info">
+                <div className=" weight">
+                    <p className="title">Weight</p>
+                    <p>{pokemon.weight}</p>
+                </div>
+            <div className=" height">
+                    <p className="title">Height</p>
+                    <p>{pokemon.height}</p>
+                </div>
+            <div className=" ability">
+                    <p className="title">Ability</p>
+                    <p>{pokemon.abilities[0].ability.name}</p>
+                </div>
             </div>
         </div>
     )
