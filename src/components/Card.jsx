@@ -3,7 +3,7 @@
 function Card({ pokemon }){
     return (
         <div className="card">
-            <div className="number">{pokemon.order}</div>
+            <div className="number">{pokemon.id}</div>
             <div className="card-img">
                 <img src={pokemon.sprites.front_default}></img>
             </div>

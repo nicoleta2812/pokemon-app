@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Card from './components/Card'
+import Footer from './components/Footer'
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -54,6 +55,7 @@ function App() {
           return <Card key={index} pokemon={pokemon} />
         })}
       </div>
+      <Footer />
     </>
   )
 }
