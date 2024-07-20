@@ -1,4 +1,4 @@
-
+import pokemonType from "../PokemonTypes"
 
 function Card({ pokemon }){
     return (
@@ -11,7 +11,7 @@ function Card({ pokemon }){
             <div className="types">
                 {pokemon.types.map((type) => {
                     return (
-                        <div className="card-type">
+                        <div className="card-type" style={{ backgroundColor: pokemonType[type.type.name]}}>
                             {type.type.name}
                         </div>
                     )
