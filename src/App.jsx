@@ -40,6 +40,22 @@ function App() {
     }
     fetchData();
   }, []);
+
+  async function nextPage(){
+    let data = await getPokemonList(nextUrl);
+    await loadingPokemon(data.results);
+    setNextUrl(data.next);
+    setPrevUrl(data.previous);
+  }
+  async function prevPage(){
+    if (!prevUrl) {
+      return false
+    }
+    let data = await getPokemonList(prevUrl);
+    await loadingPokemon(data.results);
+    setNextUrl(data.next);
+    setPrevUrl(data.previous);
+  }
   async function loadingPokemon(data){
     let _pokemonData = await Promise.all(data.map(async pokemon => {
       let pokemonInfo = await getPokemon(pokemon.url);
@@ -55,7 +71,7 @@ function App() {
           return <Card key={index} pokemon={pokemon} />
         })}
       </div>
-      <Footer />
+      <Footer nextPage={nextPage} prevPage={prevPage}/>
     </>
   )
 }

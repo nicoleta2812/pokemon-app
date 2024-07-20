@@ -1,8 +1,8 @@
-function Footer(){
+function Footer({ nextPage, prevPage }){
     return (
         <div className="btns">
-            <button>Prev</button>
-            <button>Next</button>
+            <button onClick={prevPage}>Prev</button>
+            <button onClick={nextPage}>Next</button>
         </div>
     )
 }
