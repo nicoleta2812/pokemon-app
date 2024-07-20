@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Card from './components/Card'
 import Footer from './components/Footer'
+import {} from 'react-router-dom';
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
