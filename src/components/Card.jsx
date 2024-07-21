@@ -1,8 +1,10 @@
 import pokemonType from "../PokemonTypes"
+import { Link } from "react-router-dom"
 
 function Card({ pokemon }){
     return (
-        <div className="card">
+        <Link to={`/pokemon/${pokemon.name}`}>
+            <div className="card">
             <div className="number">{pokemon.id}</div>
             <div className="card-img">
                 <img src={pokemon.sprites.front_default}></img>
@@ -32,6 +34,7 @@ function Card({ pokemon }){
                 </div>
             </div>
         </div>
+        </Link>
     )
 }
 export default Card

@@ -2,9 +2,19 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+// import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Card from './components/Card'
 import Footer from './components/Footer'
-import {} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'
+import { Link } from "react-router-dom"
+import PokemonDetails from './components/PokemonDetails'
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/card",
+//     element: <Card />
+//   }
+// ])
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -36,8 +46,7 @@ function App() {
       console.log(response);
       setNextUrl(response.next);
       setPrevUrl(response.revious);   
-      await loadingPokemon(response.results);
-     
+      await loadingPokemon(response.results);     
     }
     fetchData();
   }, []);
@@ -66,13 +75,21 @@ function App() {
   }
   console.log(pokemonData);
   return (
-    <>      
+    <> 
+      <h1>Choose your pokemon</h1>     
       <div className="container">
+      {/* <RouterProvider router={router} /> */}
+      
         {pokemonData.map((pokemon, index) => {
           return <Card key={index} pokemon={pokemon} />
         })}
       </div>
       <Footer nextPage={nextPage} prevPage={prevPage}/>
+      <Routes>
+        {/* <Route path="" element={getPokemonList}/> */}
+        {/* <Route path="/card" element={<Card />}/> */}
+        <Route path="/pokemon/:pokemonName" element={<PokemonDetails />} target="_blank"/>
+      </Routes>
     </>
   )
 }
