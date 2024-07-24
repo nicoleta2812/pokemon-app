@@ -1,13 +1,8 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 // import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Card from './components/Card'
 import Footer from './components/Footer'
-import { Routes, Route } from 'react-router-dom'
-import { Link } from "react-router-dom"
-import PokemonDetails from './components/PokemonDetails'
 
 // const router = createBrowserRouter([
 //   {
@@ -77,19 +72,12 @@ function App() {
   return (
     <> 
       <h1>Choose your pokemon</h1>     
-      <div className="container">
-      {/* <RouterProvider router={router} /> */}
-      
+      <div className="container">      
         {pokemonData.map((pokemon, index) => {
           return <Card key={index} pokemon={pokemon} />
         })}
       </div>
       <Footer nextPage={nextPage} prevPage={prevPage}/>
-      <Routes>
-        {/* <Route path="" element={getPokemonList}/> */}
-        {/* <Route path="/card" element={<Card />}/> */}
-        <Route path="/pokemon/:pokemonName" element={<PokemonDetails />} target="_blank"/>
-      </Routes>
     </>
   )
 }
