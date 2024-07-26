@@ -62,3 +62,15 @@ h1{
   background-color: rgb(31, 78, 56);
   color: azure;
 }
+.pokemonDetailsCard {
+  background-color: thistle;
+  width: 500px;
+  text-align: center;
+  margin-inline: auto;
+  border-radius: 10px;;
+}
+.pokemonDetailsCard h2{
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 32px;
+}
