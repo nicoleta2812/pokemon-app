@@ -67,11 +67,14 @@ h1{
   width: 500px;
   text-align: center;
   margin-inline: auto;
-  border-radius: 10px;;
+  border-radius: 10px;
 }
 .pokemonDetailsCard h2{
   text-transform: capitalize;
   font-weight: bold;
   font-size: 32px;
   color:rgb(13, 95, 91);
+}
+.pokemon-img {
+  box-shadow: 10px 10px 10px rgb(35, 113, 111);
 }
