@@ -1,30 +1,27 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom" 
+import PokemonCard from "./PokemonCard";
 
-function PokemonDetails({ }){
+function PokemonDetails(){
     const [details, setDetails] = useState("");
     const { pokemonName } = useParams();
     console.log(pokemonName);
+    console.log(details.sprites);
 
     useEffect(()=>{
         async function fetchDetails(){
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}/`);
             const data = await res.json();
-            // console.log(data);
+            console.log(data);
             setDetails(data);
         } 
         fetchDetails()
     }, [pokemonName])
 
     return (
-        <div className="pokemonDetailsCard">
+        <div >
             <h1>Pokemon Details</h1>
-            <h2>{details.name}</h2>
-            <div>{details.height}</div>            
-            <div>
-               <img src={details.sprites.other.front_default} width="150px"></img>
-               <img src={details.sprites.other.back_default} width="150px"></img>
-            </div>    
+            <PokemonCard details = {details}/>  
             </div>
     )
 }
