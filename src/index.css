@@ -30,10 +30,11 @@ h1 {
 }
 .card-type {
   padding: 5px 10px;
-  background-color: cadetblue;
   color: white;
   border-radius: 5px;
   margin: 10px 10px 10px 0;
+  font-weight: 700;
+  font-size: 20px;
 }
 .name {
   text-align: center;
@@ -65,10 +66,11 @@ h1 {
 }
 .pokemonDetailsCard {
   background-color: lightgreen;
-  width: 500px;
+  width: 600px;
   text-align: center;
   margin-inline: auto;
   border-radius: 10px;
+  padding: 10px;
 }
 .pokemonDetailsCard h2 {
   text-transform: capitalize;
@@ -88,11 +90,10 @@ h1 {
   text-decoration: none;
 }
 .abilities {
-  color: rgb(125, 127, 121);
+  color: 6B6B6B;
   font-size: 20px;
   font-weight: 700;
 }
-
 .bar {
   width: 70%;
   background-color: antiquewhite;
@@ -106,15 +107,15 @@ h1 {
   height: 10px;
 }
 .back-button {
-  color: darkblue;
+  color: rgb(13, 67, 27);
   font-weight: bold;
   font-size: 24px;
   border: 3px solid darkblue;
   padding: 0 20px;
   border-radius: 5px;
 }
-/* .pokemonDetails {
+.properties {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-} */
+}

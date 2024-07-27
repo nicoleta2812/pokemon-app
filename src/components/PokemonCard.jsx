@@ -26,27 +26,29 @@ function PokemonCard({ details }) {
           <img src={sprites?.front_shiny} alt={name} />
           <img src={sprites?.back_shiny} alt={name} />
         </div>
-        <div>
-          <h2>Types</h2>
-          <div className="types">
-            {types?.map((type) => (
-              // eslint-disable-next-line react/jsx-key
-              <div
-                className="card-type"
-                style={{ backgroundColor: pokemonType[type.type.name] }}
-              >
-                {type.type.name}
-              </div>
-            ))}
+        <div className="properties">
+          <div>
+            <h2>Types</h2>
+            <div className="types">
+              {types?.map((type) => (
+                // eslint-disable-next-line react/jsx-key
+                <div
+                  className="card-type"
+                  style={{ backgroundColor: pokemonType[type.type.name] }}
+                >
+                  {type.type.name}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div>
-          <h2>Abilitites</h2>
-          <div className="abilities">
-            {abilities?.map((ability) => (
-              // eslint-disable-next-line react/jsx-key
-              <div>{ability.ability.name}</div>
-            ))}
+          <div>
+            <h2>Abilitites</h2>
+            <div className="abilities">
+              {abilities?.map((ability) => (
+                // eslint-disable-next-line react/jsx-key
+                <div>{ability.ability.name}</div>
+              ))}
+            </div>
           </div>
         </div>
         <div>
