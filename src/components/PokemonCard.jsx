@@ -1,7 +1,7 @@
 import pokemonType from "../PokemonTypes";
 
 function PokemonCard({ details }) {
-  const { name, height, sprites, types } = details;
+  const { name, height, sprites, types, abilities } = details;
   console.log(types);
   return (
     <div className="pokemonDetailsCard">
@@ -32,6 +32,14 @@ function PokemonCard({ details }) {
               >
                 {type.type.name}
               </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2>Abilitites</h2>
+          <div className="abilities">
+            {abilities?.map((ability) => (
+              <div>{ability.ability.name}</div>
             ))}
           </div>
         </div>

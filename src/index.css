@@ -21,7 +21,6 @@ h1 {
   margin: 20px;
   border: 2px solid darkcyan;
 }
-
 .card-img {
   text-align: center;
 }
@@ -79,4 +78,13 @@ h1 {
 }
 .pokemon-img {
   box-shadow: 10px 10px 10px rgb(35, 113, 111);
+}
+.ability {
+  color: darkcyan;
+  text-decoration: none;
+}
+.abilities {
+  color: rgb(125, 127, 121);
+  font-size: 20px;
+  font-weight: 700;
 }
