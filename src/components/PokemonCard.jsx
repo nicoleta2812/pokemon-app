@@ -1,12 +1,17 @@
 import pokemonType from "../PokemonTypes";
+import { Link } from "react-router-dom";
 
 function PokemonCard({ details }) {
-  const { name, height, sprites, types, abilities, stats } = details;
+  const { name, sprites, types, abilities, stats } = details;
   console.log(types);
   return (
     <div className="pokemonDetailsCard">
       <h2>{name}</h2>
-      <div>Height: {height}</div>
+      <div>
+        <Link to="/" className="back-button">
+          Back
+        </Link>
+      </div>
       <div>
         <div className="pokemon-img">
           <img
