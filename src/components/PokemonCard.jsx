@@ -1,7 +1,7 @@
 import pokemonType from "../PokemonTypes";
 
 function PokemonCard({ details }) {
-  const { name, height, sprites, types, abilities } = details;
+  const { name, height, sprites, types, abilities, stats } = details;
   console.log(types);
   return (
     <div className="pokemonDetailsCard">
@@ -39,7 +39,25 @@ function PokemonCard({ details }) {
           <h2>Abilitites</h2>
           <div className="abilities">
             {abilities?.map((ability) => (
+              // eslint-disable-next-line react/jsx-key
               <div>{ability.ability.name}</div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2>Stats</h2>
+          <div>
+            {stats?.map((stat) => (
+              // eslint-disable-next-line react/jsx-key
+              <div>
+                {stat.stat.name}: {stat.base_stat}
+                <div className="bar">
+                  <div
+                    className="progress-bar"
+                    style={{ width: `${stat.base_stat}%` }}
+                  ></div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

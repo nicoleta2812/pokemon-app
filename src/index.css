@@ -77,7 +77,10 @@ h1 {
   color: rgb(13, 95, 91);
 }
 .pokemon-img {
+  border: 3px solid white;
   box-shadow: 10px 10px 10px rgb(35, 113, 111);
+  width: 400px;
+  margin-inline: auto;
 }
 .ability {
   color: darkcyan;
@@ -87,4 +90,17 @@ h1 {
   color: rgb(125, 127, 121);
   font-size: 20px;
   font-weight: 700;
+}
+
+.bar {
+  width: 70%;
+  background-color: antiquewhite;
+  height: 10px;
+  border-radius: 10px;
+  margin-inline: auto;
+}
+.progress-bar {
+  background-color: rgb(9, 87, 21);
+  border-radius: 10px;
+  height: 10px;
 }
