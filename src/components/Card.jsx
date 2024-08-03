@@ -2,6 +2,7 @@ import pokemonType from "../PokemonTypes";
 import { Link } from "react-router-dom";
 
 function Card({ pokemon }) {
+  console.log(pokemon);
   return (
     <Link to={`/pokemon/${pokemon.name}`}>
       <div className="card">

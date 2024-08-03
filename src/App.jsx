@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Card from "./components/Card";
 import Footer from "./components/Footer";
 
@@ -46,9 +45,6 @@ function App() {
     setPrevUrl(data.previous);
   }
   async function prevPage() {
-    if (!prevUrl) {
-      return false;
-    }
     let data = await getPokemonList(prevUrl);
     await loadingPokemon(data.results);
     setNextUrl(data.next);
@@ -72,7 +68,12 @@ function App() {
           return <Card key={index} pokemon={pokemon} />;
         })}
       </div>
-      <Footer nextPage={nextPage} prevPage={prevPage} />
+      <Footer
+        nextPage={nextPage}
+        prevPage={prevPage}
+        prevUrl={prevUrl}
+        nextUrl={nextUrl}
+      />
     </>
   );
 }
